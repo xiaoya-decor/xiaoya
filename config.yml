@@ -17,6 +17,7 @@ collections:
           - {name: logo, label: 標誌圖片, widget: image}
           - {name: tagline, label: 主標語, widget: string}
           - {name: tagline_en, label: 英文標語, widget: string}
+          - {name: hero_image, label: 首頁大圖(選填,放店面或作品照,有放才會當背景), widget: image, required: false}
           - {name: products_title, label: 產品區標題, widget: string}
           - name: products
             label: 產品列表
@@ -50,7 +51,10 @@ collections:
             fields:
               - {name: date, label: 日期, widget: string, hint: "例如:2026/10/15"}
               - {name: title, label: 標題, widget: string}
-              - {name: body, label: 內容, widget: text, required: false}
+              - {name: summary, label: 簡短摘要(列表上顯示,可留空), widget: string, required: false}
+              - {name: image, label: 封面照片, widget: image, required: false}
+              - {name: body, label: 文章內容(空一行即分段), widget: text, required: false}
+              - {name: gallery, label: 文章內更多照片, widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
           - {name: about, label: 關於我們(空一行即分段), widget: text}
           - {name: about_image, label: 關於我們照片, widget: image, required: false}
           - {name: address, label: 地址, widget: string}
