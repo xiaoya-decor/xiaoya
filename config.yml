@@ -17,7 +17,7 @@ collections:
           - {name: logo, label: 標誌圖片, widget: image}
           - {name: tagline, label: 主標語, widget: string}
           - {name: tagline_en, label: 英文標語, widget: string}
-          - {name: hero_image, label: 首頁大圖(選填,放店面或作品照,有放才會當背景), widget: image, required: false}
+          - {name: hero_image, label: 首頁右側照片(選填,放客廳或店面照;沒放則只顯示壁紙底圖), widget: image, required: false}
           - {name: products_title, label: 產品區標題, widget: string}
           - name: products
             label: 產品列表

@@ -7,14 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css"></head><body id="top">
 <main>
-<section class="hero" id="hero" style="padding:0"><div class="wrap"><div class="panel"><small>XIAOYA.FURNITURE</small><h1 id="tagline"></h1><p class="en" id="tagline-en"></p><a class="btn" href="products.html">看看產品</a><a class="btn o" href="#contact">聯絡我們</a></div></div></section>
+<section class="hero nopic" id="hero"><div class="txt"><small>XIAOYA.FURNITURE</small><h1 id="tagline"></h1><p class="en" id="tagline-en"></p><a class="btn" href="products.html">看看產品</a><a class="btn o" href="#contact">聯絡我們</a></div><div class="pic" id="pic" hidden></div></section>
 <section><div class="wrap"><h2 id="ptitle">居家裝飾</h2><div class="grid" id="grid"></div><p class="more"><a href="products.html">查看全部產品 →</a></p></div></section>
 <section class="alt" id="news" hidden><div class="wrap"><h2 id="ntitle">最新消息</h2><div class="nl" id="nlist"></div><p class="more"><a href="news.html">查看全部消息 →</a></p></div></section>
 </main>
 <script src="site.js"></script>
 <script>boot(d=>{
   $('#tagline').textContent=d.tagline||'小雅家飾概念';$('#tagline-en').textContent=d.tagline_en||'';
-  if(d.hero_image)$('#hero').style.backgroundImage='url("'+url(d.hero_image)+'")';
+  if(d.hero_image){const h=$('#hero');h.classList.remove('nopic');h.classList.add('pich');$('#pic').hidden=false;$('#pic').append(el('img','',{src:url(d.hero_image),alt:'小雅家飾 空間照片'}))}
   $('#ptitle').textContent=d.products_title||'居家裝飾';
   (d.products||[]).slice(0,8).forEach(p=>card($('#grid'),p,p.name,p.desc));
   if((d.news||[]).length){$('#news').hidden=false;$('#ntitle').textContent=d.news_title||'最新消息';d.news.slice(0,4).forEach(n=>$('#nlist').append(newsCard(n)))}
