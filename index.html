@@ -1,150 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>小雅家飾概念 Xiaoya.furniture</title>
+<title>小雅家飾概念 Xiaoya.furniture|窗簾・壁紙・地板・皮革</title>
+<meta name="description" content="小雅家飾概念位於台中市西區,提供窗簾、壁紙、地板與皮革等居家裝飾。在空間找到美麗的語言。">
 <link rel="icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#faf8f4;--alt:#f1ede4;--ink:#2b2a28;--mute:#6f6b64;--line:#e4dfd5;--sun:#ffc10e;--card:#fff}
-@media (prefers-color-scheme:dark){:root{--bg:#1f1e1c;--alt:#262523;--ink:#f0ece3;--mute:#a8a299;--line:#3a3834;--card:#2e2d2a}}
-html{scroll-behavior:smooth;scroll-padding-top:72px}*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;font-weight:300;line-height:1.8}
-a{color:inherit}:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;min-height:64px;flex-wrap:wrap;gap:4px 16px}
-.brand{font-family:"Noto Serif TC",serif;font-weight:600;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:10px}
-.brand img{width:34px;height:34px;border-radius:50%}
-nav a{margin-left:22px;text-decoration:none;font-size:15px;color:var(--mute)}nav a:hover{color:var(--ink)}
-.hero{background:var(--sun);color:#2b2a28;background-size:cover;background-position:center}
-.hero.img{background-image:linear-gradient(rgba(30,25,15,.55),rgba(30,25,15,.55)),var(--hi);color:#fff}
-.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;min-height:min(78vh,620px);padding-top:56px;padding-bottom:56px}
-.hero small{display:block;font-size:14px;letter-spacing:.3em;margin-bottom:20px;opacity:.75}
-h1{font-family:"Noto Serif TC",serif;font-weight:500;font-size:clamp(38px,6.2vw,68px);line-height:1.3;margin:0 0 18px;letter-spacing:.05em}
-.en{font-size:18px;margin:0 0 36px;opacity:.85;letter-spacing:.03em}
-.btn{display:inline-block;background:#2b2a28;color:#fff;padding:14px 34px;text-decoration:none;font-weight:500;border-radius:2px}
-.btn:hover{background:#000}.btn.o{background:transparent;color:inherit;border:1px solid currentColor;margin-left:12px}
-.hero.img .btn{background:#fff;color:#2b2a28}
-.hero .logo{justify-self:end;width:min(100%,380px)}.hero .logo img{width:100%;display:block}
-.hero.img .logo{display:none}.hero.img .wrap{grid-template-columns:1fr}
-.chips{background:var(--card);border-bottom:1px solid var(--line)}
-.chips .wrap{display:flex;gap:10px 28px;flex-wrap:wrap;justify-content:center;padding-top:18px;padding-bottom:18px}
-.chips a{text-decoration:none;font-family:"Noto Serif TC",serif;font-size:17px;letter-spacing:.1em}
-.chips a:hover{color:var(--mute)}
-section{padding:80px 0}section.alt{background:var(--alt)}
-h2{font-family:"Noto Serif TC",serif;font-weight:500;font-size:30px;margin:0 0 40px;letter-spacing:.08em;display:flex;align-items:center;gap:16px}
-h2::before{content:"";width:28px;height:4px;background:var(--sun)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
-.item{background:var(--card);display:flex;flex-direction:column;box-shadow:0 1px 0 var(--line)}
-.ph{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;overflow:hidden;text-align:left;font:inherit;color:inherit}
-.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .4s}
-.ph:hover img{transform:scale(1.04)}
-.item .tx{padding:22px;flex:1}
-.item h3{font-family:"Noto Serif TC",serif;font-weight:500;font-size:21px;margin:0 0 6px}
-.item p{margin:0;color:var(--mute);font-size:14px;white-space:pre-line}
-.nl{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.nc{background:var(--card);display:flex;flex-direction:column;text-align:left;border:0;padding:0;font:inherit;color:inherit;width:100%;box-shadow:0 1px 0 var(--line)}
-button.nc{cursor:pointer}button.nc:hover h3{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px}
-.nc .th{aspect-ratio:16/9;object-fit:cover;width:100%;display:block}
-.nc .tx{padding:22px;display:flex;flex-direction:column;gap:4px}
-.nc time{font-size:13px;color:var(--mute);letter-spacing:.08em}
-.nc h3{font-family:"Noto Serif TC",serif;font-weight:500;font-size:20px;margin:0;line-height:1.5}
-.nc p{margin:0;color:var(--mute);font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.nc .go{font-size:13px;margin-top:6px}
-.abt{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
-.abt.has{grid-template-columns:1.2fr 1fr}
-.abt p{margin:0 0 1em;color:var(--mute);font-size:16px}
-.abt img{width:100%;display:block}
-dl{display:grid;grid-template-columns:auto 1fr;gap:14px 32px;margin:0 0 32px;font-size:17px}dt{color:var(--mute)}dd{margin:0}
-footer{background:#2b2a28;color:#cfc9bd;padding:32px 0;font-size:13px}footer a{color:var(--sun)}
-dialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh}
-dialog::backdrop{background:rgba(0,0,0,.88)}
-.lb{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
-.lb img{max-width:100%;max-height:78vh;object-fit:contain}
-.lb p{color:#eee;margin:0;text-align:center;max-width:640px;font-size:14px}
-.cb{position:absolute;background:rgba(255,255,255,.18);color:#fff;border:0;font-size:28px;width:48px;height:48px;border-radius:50%;cursor:pointer;line-height:1}
-.x{top:16px;right:16px}.pv{left:12px;top:50%}.nx{right:12px;top:50%}
-#nd{overflow:auto}
-.art{background:var(--bg);color:var(--ink);max-width:760px;margin:4vh auto;min-height:60vh;position:relative}
-.art .x{background:rgba(0,0,0,.55);position:absolute;z-index:2}
-.art img{width:100%;display:block}
-.art .in{padding:32px 32px 48px}.art time{color:var(--mute);font-size:14px}
-.art h3{font-family:"Noto Serif TC",serif;font-weight:500;font-size:28px;line-height:1.5;margin:4px 0 20px}
-.art p{margin:0 0 1.2em;white-space:pre-line}.art .more{display:grid;gap:12px;margin-top:24px}
-@media(max-width:760px){.hero .wrap{grid-template-columns:1fr;min-height:0;gap:32px;padding-top:40px;padding-bottom:48px}.hero .logo{order:-1;justify-self:start;width:150px}.abt.has{grid-template-columns:1fr}nav a{margin:0 14px 0 0}.brand span{display:none}section{padding:56px 0}.art{margin:0;min-height:100vh}.btn.o{margin:12px 0 0}}
-</style></head><body>
-<header><div class="wrap"><a class="brand" href="#top"><img id="logo-s" alt=""><span>小雅家飾概念</span></a><nav id="nav"></nav></div></header>
-<main id="top">
-<div class="hero" id="hero"><div class="wrap"><div><small>XIAOYA.FURNITURE</small><h1 id="tagline"></h1><p class="en" id="tagline-en"></p><a class="btn" href="#products">看看產品</a><a class="btn o" href="#contact">預約諮詢</a></div>
-<div class="logo"><img id="logo-l" alt="小雅家飾 標誌"></div></div></div>
-<div class="chips" id="chips"><div class="wrap"></div></div>
-<section id="products"><div class="wrap"><h2 id="ptitle"></h2><div class="grid" id="grid"></div></div></section>
-<section id="projects" class="alt" hidden><div class="wrap"><h2 id="jtitle"></h2><div class="grid" id="jgrid"></div></div></section>
-<section id="news" hidden><div class="wrap"><h2 id="ntitle"></h2><div class="nl" id="nlist"></div></div></section>
-<section id="about" class="alt"><div class="wrap"><h2>關於小雅</h2><div class="abt" id="abt"><div id="about-t"></div></div></div></section>
-<section id="contact"><div class="wrap"><h2>聯絡我們</h2><dl id="info"></dl>
-<a class="btn" id="map" target="_blank" rel="noopener">在地圖上查看</a><p id="fb"></p></div></section>
+<link rel="stylesheet" href="site.css"></head><body id="top">
+<main>
+<section class="hero" id="hero" style="padding:0"><div class="wrap"><div class="panel"><small>XIAOYA.FURNITURE</small><h1 id="tagline"></h1><p class="en" id="tagline-en"></p><a class="btn" href="products.html">看看產品</a><a class="btn o" href="#contact">聯絡我們</a></div></div></section>
+<section><div class="wrap"><h2 id="ptitle">居家裝飾</h2><div class="grid" id="grid"></div><p class="more"><a href="products.html">查看全部產品 →</a></p></div></section>
+<section class="alt" id="news" hidden><div class="wrap"><h2 id="ntitle">最新消息</h2><div class="nl" id="nlist"></div><p class="more"><a href="news.html">查看全部消息 →</a></p></div></section>
 </main>
-<footer><div class="wrap">© 小雅家飾概念 Xiaoya.furniture</div></footer>
-<dialog id="lb"><div class="lb"><button class="cb x" aria-label="關閉">×</button><button class="cb pv" aria-label="上一張">‹</button><img id="lbi" alt=""><button class="cb nx" aria-label="下一張">›</button><p id="lbc"></p></div></dialog>
-<dialog id="nd"><article class="art"><button class="cb x" aria-label="關閉">×</button><div id="ndb"></div></article></dialog>
-<script>
-const $=id=>document.getElementById(id);
-function el(t,txt,a){const e=document.createElement(t);if(txt)e.textContent=txt;if(a)Object.assign(e,a);return e}
-const url=p=>encodeURI(String(p).replace(/^\/+/,''));
-const paras=(host,s)=>String(s||'').split(/\n\s*\n/).filter(x=>x.trim()).forEach(x=>host.append(el('p',x.trim())));
-let L=[],I=0;const dlg=$('lb'),nd=$('nd');
-function show(){const it=L[I];$('lbi').src=it.src;$('lbi').alt=it.cap;$('lbc').textContent=it.cap||'';dlg.querySelector('.pv').hidden=dlg.querySelector('.nx').hidden=L.length<2}
-function openLb(list,i){L=list;I=i;show();dlg.showModal()}
-function step(n){I=(I+n+L.length)%L.length;show()}
-dlg.querySelector('.x').onclick=()=>dlg.close();
-dlg.querySelector('.pv').onclick=()=>step(-1);dlg.querySelector('.nx').onclick=()=>step(1);
-dlg.addEventListener('click',e=>{if(e.target===dlg||e.target.classList.contains('lb'))dlg.close()});
-dlg.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
-nd.querySelector('.x').onclick=()=>nd.close();
-nd.addEventListener('click',e=>{if(e.target===nd)nd.close()});
-function card(host,it,title,desc){
-  const c=el('div');c.className='item';
-  const pics=[it.image,...(it.gallery||[])].filter(Boolean).map(p=>({src:url(p),cap:title}));
-  if(pics.length){const b=el('button','',{type:'button'});b.className='ph';b.setAttribute('aria-label','查看 '+title+' 照片');
-    b.append(el('img','',{src:pics[0].src,alt:title,loading:'lazy'}));b.onclick=()=>openLb(pics,0);c.append(b)}
-  const t=el('div');t.className='tx';t.append(el('h3',title));if(desc)t.append(el('p',desc));c.append(t);host.append(c)}
-function article(n){const b=$('ndb');b.replaceChildren();
-  if(n.image)b.append(el('img','',{src:url(n.image),alt:n.title}));
-  const d=el('div');d.className='in';d.append(el('time',n.date),el('h3',n.title));paras(d,n.body);
-  if((n.gallery||[]).length){const g=el('div');g.className='more';n.gallery.forEach(p=>g.append(el('img','',{src:url(p),alt:n.title,loading:'lazy'})));d.append(g)}
-  b.append(d);nd.showModal();nd.scrollTop=0}
-fetch('site.json?'+Date.now()).then(r=>r.json()).then(d=>{
-  $('logo-s').src=$('logo-l').src=url(d.logo);
-  $('tagline').textContent=d.tagline;$('tagline-en').textContent=d.tagline_en;
-  if(d.hero_image){$('hero').classList.add('img');$('hero').style.setProperty('--hi','url("'+url(d.hero_image)+'")')}
-  const nav=[['products','產品']];
-  $('ptitle').textContent=d.products_title||'居家裝飾';
-  (d.products||[]).forEach(p=>{card($('grid'),p,p.name,p.desc)});
-  $('chips').firstChild.append(...(d.products||[]).map(p=>el('a',p.name,{href:'#products'})));
-  if(!(d.products||[]).length)$('chips').hidden=true;
-  if((d.projects||[]).length){$('projects').hidden=false;$('jtitle').textContent=d.projects_title||'作品案例';
-    d.projects.forEach(p=>card($('jgrid'),p,p.title,p.desc));nav.push(['projects',d.projects_title||'作品案例'])}
-  if((d.news||[]).length){$('news').hidden=false;$('ntitle').textContent=d.news_title||'最新消息';
-    d.news.forEach(n=>{const has=n.body||n.image||(n.gallery||[]).length;
-      const c=el(has?'button':'div');if(has)c.type='button';c.className='nc';
-      if(n.image)c.append(el('img','',{className:'th',src:url(n.image),alt:'',loading:'lazy'}));
-      const t=el('div');t.className='tx';t.append(el('time',n.date),el('h3',n.title));
-      const s=n.summary||String(n.body||'').replace(/\s+/g,' ').slice(0,80);if(s)t.append(el('p',s));
-      if(has)t.append(el('span','閱讀全文 →',{className:'go'}));c.append(t);if(has)c.onclick=()=>article(n);$('nlist').append(c)});
-    nav.push(['news',d.news_title||'最新消息'])}
-  nav.push(['about','關於我們'],['contact','聯絡我們']);
-  nav.forEach(([h,t])=>$('nav').append(el('a',t,{href:'#'+h})));
-  paras($('about-t'),d.about);
-  if(d.about_image){$('abt').classList.add('has');$('abt').append(el('img','',{src:url(d.about_image),alt:'小雅家飾',loading:'lazy'}))}
-  const dd=n=>{const e=el('dd');e.append(n);return e};
-  const add=(k,v)=>{if(v){$('info').append(el('dt',k),v)}};
-  add('地址',dd(d.address));
-  if(d.phone)add('電話',dd(el('a',d.phone,{href:'tel:'+d.phone.replace(/[^\d+]/g,'').replace(/^0/,'+886')})));
-  if(d.email)add('E-mail',dd(el('a',d.email,{href:'mailto:'+d.email})));
-  add('營業時間',dd(d.hours));
-  $('map').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(d.address);
-  if(d.facebook)$('fb').append(el('a','Facebook 專頁',{href:d.facebook,target:'_blank',rel:'noopener'}));
-}).catch(()=>{$('tagline').textContent='小雅家飾概念'});
-</script></body></html>
+<script src="site.js"></script>
+<script>boot(d=>{
+  $('#tagline').textContent=d.tagline||'小雅家飾概念';$('#tagline-en').textContent=d.tagline_en||'';
+  if(d.hero_image)$('#hero').style.backgroundImage='url("'+url(d.hero_image)+'")';
+  $('#ptitle').textContent=d.products_title||'居家裝飾';
+  (d.products||[]).slice(0,8).forEach(p=>card($('#grid'),p,p.name,p.desc));
+  if((d.news||[]).length){$('#news').hidden=false;$('#ntitle').textContent=d.news_title||'最新消息';d.news.slice(0,4).forEach(n=>$('#nlist').append(newsCard(n)))}
+})</script></body></html>

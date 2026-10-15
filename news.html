@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>最新消息|小雅家飾概念</title><link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css"></head><body id="top">
+<main id="m"></main>
+<script src="site.js"></script>
+<script>boot(d=>{
+  const m=$('#m'),list=d.news||[],id=new URLSearchParams(location.search).get('id'),n=id&&list.find(x=>nid(x)===id);
+  const head=t=>{const h=el('div');h.className='pagehead';h.innerHTML='<div class="wrap"><h1></h1></div>';h.querySelector('h1').textContent=t;m.append(h)};
+  if(n){document.title=n.title+'|小雅家飾概念';
+    const s=el('section'),w=el('div');w.className='wrap';const a=el('article');a.className='art';
+    a.append(el('a','← 回到最新消息',{href:'news.html',className:'back'}));
+    if(n.image)a.append(el('img','',{className:'cover',src:url(n.image),alt:n.title}));
+    a.append(el('time',n.date),el('h1',n.title));paras(a,n.body);
+    if((n.gallery||[]).length){const g=el('div');g.className='gal';const pics=n.gallery.map(p=>({src:url(p),cap:n.title}));
+      pics.forEach((p,i)=>{const im=el('img','',{src:p.src,alt:n.title,loading:'lazy'});im.onclick=()=>openLb(pics,i);g.append(im)});a.append(g)}
+    w.append(a);s.append(w);m.append(s)}
+  else{head(d.news_title||'最新消息');
+    const s=el('section'),w=el('div');w.className='wrap';const g=el('div');g.className='nl';
+    if(!list.length)w.append(el('p','目前沒有消息,敬請期待。',{className:'empty'}));
+    let shown=0;const more=el('p');more.className='more';const b=el('button','載入更多',{type:'button',className:'btn'});b.style.border='0';b.style.cursor='pointer';more.append(b);
+    const next=()=>{list.slice(shown,shown+9).forEach(x=>g.append(newsCard(x)));shown+=9;more.hidden=shown>=list.length};
+    b.onclick=next;w.append(g,more);s.append(w);m.append(s);next()}
+})</script></body></html>
