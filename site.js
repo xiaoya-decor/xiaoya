@@ -17,7 +17,10 @@ function card(host,it,title,desc){
   const pics=[it.image,...(it.gallery||[])].filter(Boolean).map(p=>({src:url(p),cap:title}));
   if(pics.length){const b=el('button','',{type:'button'});b.className='ph';b.setAttribute('aria-label','查看 '+title+' 照片');
     b.append(el('img','',{src:pics[0].src,alt:title,loading:'lazy'}));b.onclick=()=>openLb(pics,0);c.append(b)}
-  const t=el('div');t.className='tx';t.append(el('h3',title));if(desc)t.append(el('p',desc));c.append(t);host.append(c)}
+  const t=el('div');t.className='tx';t.append(el('h3',title));if(desc)t.append(el('p',desc));
+  if(pics.length){t.classList.add('clk');t.tabIndex=0;t.setAttribute('role','button');t.setAttribute('aria-label','查看 '+title+' 照片');
+    t.onclick=()=>openLb(pics,0);t.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(pics,0)}}}
+  c.append(t);host.append(c)}
 function newsCard(n){
   const has=n.body||n.image||(n.gallery||[]).length;
   const c=el(has?'a':'div');c.className='nc';if(has)c.href='news.html?id='+nid(n);
