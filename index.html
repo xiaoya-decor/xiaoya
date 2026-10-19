@@ -16,6 +16,6 @@
   $('#tagline').textContent=d.tagline||'小雅家飾概念';$('#tagline-en').textContent=d.tagline_en||'';
   if(d.hero_image){const h=$('#hero');h.classList.remove('nopic');h.classList.add('pich');$('#pic').hidden=false;$('#pic').append(el('img','',{src:url(d.hero_image),alt:'小雅家飾 空間照片'}))}
   $('#ptitle').textContent=d.products_title||'居家裝飾';
-  (d.products||[]).slice(0,8).forEach(p=>card($('#grid'),p,p.name,p.desc));
+  (d.products||[]).slice(0,8).forEach(p=>catCard($('#grid'),p,'category.html?c='+hid(p.name),p.name));
   if((d.news||[]).length){$('#news').hidden=false;$('#ntitle').textContent=d.news_title||'最新消息';d.news.slice(0,4).forEach(n=>$('#nlist').append(newsCard(n)))}
 })</script></body></html>

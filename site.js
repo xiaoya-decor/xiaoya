@@ -3,6 +3,24 @@ function el(t,txt,a){const e=document.createElement(t);if(txt)e.textContent=txt;
 const url=p=>encodeURI(String(p).replace(/^\/+/,''));
 const paras=(host,s)=>String(s||'').split(/\n\s*\n/).filter(x=>x.trim()).forEach(x=>host.append(el('p',x.trim())));
 const nid=n=>{let h=5381;const s=(n.date||'')+'|'+(n.title||'');for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))>>>0;return h.toString(36)};
+
+const hid=s=>{let h=5381;s=String(s||'');for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))>>>0;return h.toString(36)};
+const param=k=>new URLSearchParams(location.search).get(k);
+const NOTICE='所有商品圖片皆為實物拍攝,由於電腦螢幕色差、拍攝光線等因素,照片與實物會略有差別,商品以實物為主。\n備註:因每年會汰換布料樣式,布料樣式需以現場為主。';
+function pageHead(en,title,crumb){
+  const h=el('div');h.className='pagehead';const w=el('div');w.className='wrap';
+  const t=el('div');t.className='ph-t';t.append(el('span',en,{className:'en2'}),el('h1',title));w.append(t);
+  if(crumb){const c=el('nav');c.className='crumb';c.setAttribute('aria-label','導覽路徑');
+    crumb.forEach(([n,u],i)=>{if(i)c.append(' > ');c.append(u?el('a',n,{href:u}):el('span',n))});w.append(c)}
+  h.append(w);return h}
+function catCard(host,it,href,title){
+  const a=el('a');a.className='cat';a.href=href;const src=it.image||(it.photos||it.gallery||[])[0];
+  if(src){const f=el('span');f.className='cf';f.append(el('img','',{src:url(src),alt:title,loading:'lazy'}));a.append(f)}
+  a.append(el('span',title,{className:'cn'}));host.append(a)}
+function photoGrid(list,cap){
+  const g=el('div');g.className='pg';const pics=list.filter(Boolean).map(p=>({src:url(p),cap}));
+  pics.forEach((p,i)=>{const b=el('button','',{type:'button'});b.setAttribute('aria-label','放大查看第 '+(i+1)+' 張');b.append(el('img','',{src:p.src,alt:cap,loading:'lazy'}));b.onclick=()=>openLb(pics,i);g.append(b)});
+  return g}
 let L=[],I=0,dlg;
 function lbShow(){const it=L[I];$('#lbi').src=it.src;$('#lbi').alt=it.cap||'';$('#lbc').textContent=it.cap||'';dlg.querySelector('.pv').hidden=dlg.querySelector('.nx').hidden=L.length<2}
 function lbStep(n){I=(I+n+L.length)%L.length;lbShow()}

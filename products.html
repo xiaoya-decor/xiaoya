@@ -4,11 +4,13 @@
 <title>產品服務|小雅家飾概念</title><link rel="icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css"></head><body id="top">
-<main><div class="pagehead"><div class="wrap"><h1 id="ptitle">產品服務</h1><p>窗簾・壁紙・地板・皮革</p></div></div>
-<section><div class="wrap"><div class="grid" id="grid"></div></div></section>
-<section class="alt" id="projects" hidden><div class="wrap"><h2 id="jtitle">作品案例</h2><div class="grid" id="jgrid"></div></div></section></main>
+<main id="m"></main>
 <script src="site.js"></script>
-<script>boot(d=>{
-  (d.products||[]).forEach(p=>card($('#grid'),p,p.name,p.desc));
-  if((d.projects||[]).length){$('#projects').hidden=false;$('#jtitle').textContent=d.projects_title||'作品案例';d.projects.forEach(p=>card($('#jgrid'),p,p.title,p.desc))}
+<script>
+$('#m').append(pageHead('PRODUCT','產品服務總覽',[['首頁','index.html'],['產品服務']]));
+const s1=el('section'),w1=el('div');w1.className='wrap';const g=el('div');g.className='grid';w1.append(g);s1.append(w1);$('#m').append(s1);
+const s2=el('section');s2.className='alt';s2.hidden=true;s2.innerHTML='<div class="wrap"><h2></h2><div class="grid"></div></div>';$('#m').append(s2);
+boot(d=>{
+  (d.products||[]).forEach(p=>catCard(g,p,'category.html?c='+hid(p.name),p.name));
+  if((d.projects||[]).length){s2.hidden=false;s2.querySelector('h2').textContent=d.projects_title||'作品案例';d.projects.forEach(p=>card(s2.querySelector('.grid'),p,p.title,p.desc))}
 })</script></body></html>
