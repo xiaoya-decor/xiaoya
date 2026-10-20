@@ -15,7 +15,8 @@ function pageHead(en,title,crumb){
   h.append(w);return h}
 function catCard(host,it,href,title){
   const a=el('a');a.className='cat';a.href=href;const src=it.image||(it.photos||it.gallery||[])[0];
-  if(src){const f=el('span');f.className='cf';f.append(el('img','',{src:url(src),alt:title,loading:'lazy'}));a.append(f)}
+  const f=el('span');f.className='cf'+(src?'':' ph0');
+  f.append(el('img','',{src:src?url(src):'logo.png',alt:src?title:'',loading:'lazy'}));a.append(f);
   a.append(el('span',title,{className:'cn'}));host.append(a)}
 function photoGrid(list,cap){
   const g=el('div');g.className='pg';const pics=list.filter(Boolean).map(p=>({src:url(p),cap}));

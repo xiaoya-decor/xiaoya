@@ -98,3 +98,5 @@ dialog::backdrop{background:rgba(0,0,0,.88)}
 .sib a{display:inline-block;margin:0 10px 10px 0;padding:6px 18px;border:1px solid var(--line);text-decoration:none;border-radius:20px;background:var(--card)}
 .sib a:hover,.sib a.on{background:var(--sun);border-color:var(--sun);color:#2b2a28}
 @media(max-width:760px){.pg{grid-template-columns:repeat(2,1fr)}.cta{padding:24px}.crumb{font-size:14px}}
+
+.cat .cf.ph0{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}.cat .cf.ph0 img{width:34%;aspect-ratio:1;object-fit:contain;opacity:.55;border-radius:50%;transform:none}
