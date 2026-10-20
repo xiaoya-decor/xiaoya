@@ -5,6 +5,7 @@ const paras=(host,s)=>String(s||'').split(/\n\s*\n/).filter(x=>x.trim()).forEach
 const nid=n=>{let h=5381;const s=(n.date||'')+'|'+(n.title||'');for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))>>>0;return h.toString(36)};
 
 const hid=s=>{let h=5381;s=String(s||'');for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))>>>0;return h.toString(36)};
+const itemsOf=(d,p)=>[...(p.items||[]),...(d.items||[]).filter(x=>x.category===p.name)];
 const param=k=>new URLSearchParams(location.search).get(k);
 const NOTICE='所有商品圖片皆為實物拍攝,由於電腦螢幕色差、拍攝光線等因素,照片與實物會略有差別,商品以實物為主。\n備註:因每年會汰換布料樣式,布料樣式需以現場為主。';
 function pageHead(en,title,crumb){

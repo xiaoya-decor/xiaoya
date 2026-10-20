@@ -25,7 +25,7 @@
   m.append(pageHead('PRODUCT',p.name,[['首頁','index.html'],['產品服務','products.html'],[p.name]]));
   const w=sec();
   if(p.desc){const l=el('div');l.className='lead';paras(l,p.desc);w.append(l)}
-  const items=p.items||[];
+  const items=itemsOf(d,p);
   if(items.length){const g=el('div');g.className='grid';items.forEach(it=>catCard(g,it,'item.html?c='+id+'&i='+hid(it.name),it.name));w.append(g)}
   else{const pics=[p.image,...(p.gallery||[])].filter(Boolean);
     if(pics.length)w.append(photoGrid(pics,p.name));else w.append(el('p','項目整理中,敬請期待。',{className:'empty'}))}

@@ -28,19 +28,20 @@ collections:
               - {name: name, label: 名稱, widget: string}
               - {name: desc, label: 說明, widget: text}
               - {name: image, label: 封面照片, widget: image, required: false}
-              - {name: gallery, label: 更多照片(沒有下層項目時顯示), widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
-              - name: items
-                label: 下層項目(例如窗簾底下的百葉、蜂巢簾)
-                label_singular: 項目
-                widget: list
-                required: false
-                summary: "{{fields.name}}"
-                fields:
-                  - {name: name, label: 項目名稱, widget: string}
-                  - {name: image, label: 封面照片, widget: image, required: false}
-                  - {name: desc, label: 項目說明(空一行即分段), widget: text, required: false}
-                  - {name: features, label: 特色或規格(一行一項), widget: text, required: false}
-                  - {name: photos, label: 照片集, widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
+              - {name: gallery, label: 更多照片(類別沒有細品時顯示), widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
+          - name: items
+            label: 細品項目(例如窗簾的布紗簾、捲簾)
+            label_singular: 細品項目
+            widget: list
+            required: false
+            summary: "{{fields.category}}|{{fields.name}}"
+            fields:
+              - {name: category, label: 所屬類別, widget: select, options: ["窗簾", "壁紙", "地板／地磚／地毯", "皮革", "布料"]}
+              - {name: name, label: 細品名稱, widget: string}
+              - {name: image, label: 封面照片, widget: image, required: false}
+              - {name: desc, label: 說明(空一行即分段), widget: text, required: false}
+              - {name: features, label: 特色或規格(一行一項), widget: text, required: false}
+              - {name: photos, label: 照片集, widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
           - {name: product_notice, label: 項目頁上方的提醒文字(留空則不顯示), widget: text, required: false}
           - {name: projects_title, label: 作品案例標題, widget: string, required: false, hint: "例如:作品案例。沒有作品時整區不會顯示"}
           - name: projects
