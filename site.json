@@ -1,6 +1,6 @@
 {
   "logo": "/images/00008.jpg",
-  "tagline": "在空間找到美麗的語言",
+  "tagline": "在空間找到美麗語言",
   "tagline_en": "Find the beautiful language in space.",
   "hero_image": "/images/00008.jpg",
   "products_title": "居家裝飾設計",
@@ -15,7 +15,8 @@
         "/images/00013.jpg",
         "/images/00014.jpg",
         "/images/00015.jpg"
-      ]
+      ],
+      "items": []
     },
     {
       "name": "壁紙",
@@ -25,7 +26,8 @@
         "/images/00009.jpg",
         "/images/00010.jpg",
         "/images/00011.jpg"
-      ]
+      ],
+      "items": []
     },
     {
       "name": "地板／地磚／地毯",
@@ -37,7 +39,8 @@
         "/images/00020.jpg",
         "/images/00026.jpg",
         "/images/00027.jpg"
-      ]
+      ],
+      "items": []
     },
     {
       "name": "皮革",
@@ -46,7 +49,8 @@
       "gallery": [
         "/images/00017.jpg",
         "/images/00021.jpg"
-      ]
+      ],
+      "items": []
     },
     {
       "name": "布料",
@@ -56,9 +60,11 @@
         "/images/00023.jpg",
         "/images/00024.jpg",
         "/images/00025.jpg"
-      ]
+      ],
+      "items": []
     }
   ],
+  "product_notice": "",
   "projects_title": "",
   "projects": [],
   "news_title": "",
