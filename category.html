@@ -2,13 +2,13 @@
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>產品服務|小雅家飾概念</title>
-<meta name="description" content="小雅家飾概念的產品類別與項目介紹,窗簾、壁紙、地板、皮革。">
+<meta name="description" content="小雅家飾概念的產品類別與項目介紹，窗簾、壁紙、地板、皮革。">
 <meta name="theme-color" content="#f9ba06">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="小雅家飾概念">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="產品服務|小雅家飾概念">
-<meta property="og:description" content="小雅家飾概念的產品類別與項目介紹,窗簾、壁紙、地板、皮革。">
+<meta property="og:description" content="小雅家飾概念的產品類別與項目介紹，窗簾、壁紙、地板、皮革。">
 <meta property="og:image" content="https://www.xiaoya.com.tw/logo-wide.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="logo.png">
@@ -28,6 +28,6 @@
   const items=itemsOf(d,p);
   if(items.length){const g=el('div');g.className='grid';items.forEach(it=>catCard(g,it,'item.html?c='+id+'&i='+hid(it.name),it.name));w.append(g)}
   else{const pics=[p.image,...(p.gallery||[])].filter(Boolean);
-    if(pics.length)w.append(photoGrid(pics,p.name));else w.append(el('p','項目整理中,敬請期待。',{className:'empty'}))}
+    if(pics.length)w.append(photoGrid(pics,p.name));else w.append(el('p','項目整理中，敬請期待。',{className:'empty'}))}
   const c=el('p');c.className='more';c.style.textAlign='left';c.append(el('a','← 回到產品服務',{href:'products.html'}));w.append(c);
 })</script></body></html>

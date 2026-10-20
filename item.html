@@ -31,8 +31,8 @@
   const fs=String(it.features||'').split(/\n/).map(x=>x.trim()).filter(Boolean);
   if(fs.length){const u=el('ul');u.className='feat';fs.forEach(f=>u.append(el('li',f)));w.append(u)}
   const pics=[...(it.photos||[])];if(!pics.length&&it.image)pics.push(it.image);
-  if(pics.length)w.append(photoGrid(pics,it.name));else w.append(el('p','照片整理中,敬請期待。',{className:'empty'}));
-  const cta=el('div');cta.className='cta';cta.append(el('h2','想了解更多?歡迎預約丈量與諮詢'),el('p','現場看樣、丈量與報價,我們都能協助。'));
+  if(pics.length)w.append(photoGrid(pics,it.name));else w.append(el('p','照片整理中，敬請期待。',{className:'empty'}));
+  const cta=el('div');cta.className='cta';cta.append(el('h2','想了解更多？歡迎預約丈量與諮詢'),el('p','現場看樣、丈量與報價，我們都能協助。'));
   if(d.phone)cta.append(el('a','撥打電話 '+d.phone,{className:'btn',href:'tel:'+d.phone.replace(/[^\d+]/g,'').replace(/^0/,'+886')}));
   if(d.facebook)cta.append(el('a','Facebook 私訊',{className:'btn o',href:d.facebook,target:'_blank',rel:'noopener'}));
   cta.append(el('a','聯絡資訊',{className:'btn o',href:'#contact'}));w.append(cta);
