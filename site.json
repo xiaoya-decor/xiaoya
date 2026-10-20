@@ -64,6 +64,79 @@
       "items": []
     }
   ],
+  "items": [
+    {
+      "category": "窗簾",
+      "name": "布紗簾",
+      "image": "/images/715052_0.jpg",
+      "desc": "",
+      "features": "",
+      "photos": [
+        "/images/715033_0.jpg",
+        "/images/715029_0.jpg",
+        "/images/715028.jpg",
+        "/images/715027.jpg",
+        "/images/715011_0.jpg"
+      ]
+    },
+    {
+      "category": "窗簾",
+      "name": "捲簾",
+      "image": "/images/715003.jpg",
+      "desc": "",
+      "features": "",
+      "photos": [
+        "/images/715005_0.jpg",
+        "/images/715006_0.jpg",
+        "/images/上為會客室、下為會議室.jpg"
+      ]
+    },
+    {
+      "category": "窗簾",
+      "name": "風琴簾(蜂巢簾)",
+      "image": "/images/715009_0.jpg",
+      "desc": "",
+      "features": "",
+      "photos": [
+        "/images/715008_0.jpg",
+        "/images/715010_0.jpg"
+      ]
+    },
+    {
+      "category": "窗簾",
+      "name": "百葉簾",
+      "image": "/images/715016_0.jpg",
+      "desc": "",
+      "features": "",
+      "photos": [
+        "/images/514072512_10091688987534114_4063022139227551768_n.jpg",
+        "/images/715015_0.jpg",
+        "/images/715043_0.jpg"
+      ]
+    },
+    {
+      "category": "窗簾",
+      "name": "羅馬簾",
+      "image": "/images/715049_0.jpg",
+      "desc": "",
+      "features": "",
+      "photos": [
+        "/images/715046_0.jpg",
+        "/images/715051_0.jpg"
+      ]
+    },
+    {
+      "category": "窗簾",
+      "name": "調光簾",
+      "image": "/images/123361974_3432910986745314_7668192367561456330_n.jpg",
+      "desc": "",
+      "features": "",
+      "photos": [
+        "/images/177382457_3888864957816579_1311237626518202070_n.jpg",
+        "/images/123495903_3432910580078688_8129612935965168580_n.jpg"
+      ]
+    }
+  ],
   "product_notice": "",
   "projects_title": "",
   "projects": [],
