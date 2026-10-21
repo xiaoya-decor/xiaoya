@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>產品服務|小雅家飾概念</title>
+<title>產品服務｜小雅家飾概念</title>
 <meta name="description" content="小雅家飾概念的產品類別與項目介紹，窗簾、壁紙、地板、皮革。">
 <meta name="theme-color" content="#f9ba06">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="小雅家飾概念">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="產品服務|小雅家飾概念">
+<meta property="og:title" content="產品服務｜小雅家飾概念">
 <meta property="og:description" content="小雅家飾概念的產品類別與項目介紹，窗簾、壁紙、地板、皮革。">
 <meta property="og:image" content="https://www.xiaoya.com.tw/logo-wide.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="favicon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css"></head><body id="top">
 <main id="m"></main>
@@ -21,7 +23,7 @@
   const sec=()=>{const s=el('section'),w=el('div');w.className='wrap';s.append(w);m.append(s);return w};
   if(!p){m.append(pageHead('PRODUCT','產品服務',[['首頁','index.html'],['產品服務','products.html']]));
     const w=sec();w.append(el('p','找不到這個類別。',{className:'empty'}),el('a','← 回到產品服務',{href:'products.html',className:'back'}));return}
-  document.title=p.name+'|產品服務|小雅家飾概念';
+  document.title=p.name+'｜產品服務｜小雅家飾概念';
   m.append(pageHead('PRODUCT',p.name,[['首頁','index.html'],['產品服務','products.html'],[p.name]]));
   const w=sec();
   if(p.desc){const l=el('div');l.className='lead';paras(l,p.desc);w.append(l)}
