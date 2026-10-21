@@ -1,0 +1,63 @@
+{
+  "products_title": "居家裝飾設計",
+  "products": [
+    {
+      "name": "窗簾",
+      "desc": "為光線與隱私，選一塊合適的家飾。",
+      "image": "/images/00002.jpg",
+      "gallery": [
+        "/images/00006.jpg",
+        "/images/00012.jpg",
+        "/images/00013.jpg",
+        "/images/00014.jpg",
+        "/images/00015.jpg"
+      ],
+      "items": []
+    },
+    {
+      "name": "壁紙",
+      "desc": "牆面的質感與色彩，決定空間的氛圍。",
+      "image": "/images/00003.jpg",
+      "gallery": [
+        "/images/00009.jpg",
+        "/images/00010.jpg",
+        "/images/00011.jpg"
+      ],
+      "items": []
+    },
+    {
+      "name": "地板／地磚／地毯",
+      "desc": "從腳下開始，打造溫潤耐用的基底。",
+      "image": "/images/地板.jpg",
+      "gallery": [
+        "/images/00019.jpg",
+        "/images/00016.jpg",
+        "/images/00020.jpg",
+        "/images/00026.jpg",
+        "/images/00027.jpg"
+      ],
+      "items": []
+    },
+    {
+      "name": "皮革",
+      "desc": "皮革提升居家質感，高貴俐落又大方的選擇。",
+      "image": "/images/皮革.jpg",
+      "gallery": [
+        "/images/00017.jpg",
+        "/images/00021.jpg"
+      ],
+      "items": []
+    },
+    {
+      "name": "布料",
+      "desc": "力求獨特的面料質感，紡織工藝讓觸感歷久不衰。",
+      "image": "/images/00022.jpg",
+      "gallery": [
+        "/images/00023.jpg",
+        "/images/00024.jpg",
+        "/images/00025.jpg"
+      ],
+      "items": []
+    }
+  ]
+}
