@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>資料整理工具|小雅家飾概念</title>
+<style>body{font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;max-width:640px;margin:40px auto;padding:0 20px;line-height:1.8;color:#2b2a28}
+a.b{display:block;margin:10px 0;padding:14px 18px;background:#f9ba06;color:#2b2a28;text-decoration:none;border-radius:4px;font-weight:500}
+small{color:#6f6b64}code{background:#eee;padding:1px 6px}</style></head><body>
+<h1>資料整理工具</h1>
+<p>這個工具會把網站目前的內容,拆成後台新的分頁所需的 6 個檔案。請依序按下面的按鈕<strong>全部下載</strong>,再把這 6 個檔案上傳到 GitHub 儲存庫(覆蓋同名檔案)。</p>
+<div id="o">讀取中…</div>
+<script>
+const J=u=>fetch(u+'?'+Date.now()).then(r=>r.ok?r.json():{}).catch(()=>({}));
+const pick=(d,ks)=>{const o={};ks.forEach(k=>{if(d[k]!==undefined)o[k]=d[k]});return o};
+function split(d){return{
+ 'site.json':pick(d,['logo','tagline','tagline_en','hero_image','address','phone','email','hours','facebook','instagram','product_notice']),
+ 'about.json':pick(d,['about','about_image']),
+ 'products.json':pick(d,['products_title','products']),
+ 'items.json':{items:d.items||[]},
+ 'projects.json':{projects_title:d.projects_title||'',projects:d.projects||[]},
+ 'news.json':{news_title:d.news_title||'',news:d.news||[]}}}
+Promise.all(['site','about','products','items','projects','news'].map(n=>J(n+'.json'))).then(a=>Object.assign({},...a)).then(d=>{
+  const o=document.getElementById('o');o.textContent='';
+  if(!d||!Object.keys(d).length){o.textContent='讀不到網站資料,請確認 site.json 存在。';return}
+  const f=split(d);
+  Object.entries(f).forEach(([n,v])=>{const a=document.createElement('a');a.className='b';a.textContent='下載 '+n;
+    a.href=URL.createObjectURL(new Blob([JSON.stringify(v,null,2)],{type:'application/json'}));a.download=n;o.append(a)});
+  const p=document.createElement('p');p.innerHTML='<small>共 6 個檔案。上傳完成後,這個頁面(<code>migrate.html</code>)可以從儲存庫刪除。</small>';o.append(p)});
+</script></body></html>

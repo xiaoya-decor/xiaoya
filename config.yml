@@ -6,74 +6,129 @@ locale: zh-Hant
 media_folder: images
 public_folder: images
 collections:
-  - name: pages
-    label: 網站內容
+  - name: settings
+    label: 網站設定
+    icon: settings
     files:
       - name: site
-        label: 官網內容
+        label: 首頁與聯絡資訊
         file: site.json
         format: json
         fields:
           - {name: logo, label: 標誌圖片, widget: image}
-          - {name: tagline, label: 主標語, widget: string}
-          - {name: tagline_en, label: 英文標語, widget: string}
-          - {name: hero_image, label: 首頁右側照片(選填,放客廳或店面照;沒放則只顯示壁紙底圖), widget: image, required: false}
-          - {name: products_title, label: 產品區標題, widget: string}
+          - {name: tagline, label: 首頁主標語, widget: string}
+          - {name: tagline_en, label: 首頁英文標語, widget: string}
+          - {name: hero_image, label: 首頁右側照片(選填), widget: image, required: false}
+          - {name: address, label: 地址, widget: string}
+          - {name: phone, label: 電話, widget: string}
+          - {name: email, label: E-mail, widget: string}
+          - {name: hours, label: 營業時間, widget: string, required: false}
+          - {name: facebook, label: Facebook 連結, widget: string, required: false}
+          - {name: instagram, label: Instagram 連結(留空則用預設), widget: string, required: false}
+          - {name: product_notice, label: 項目頁上方的提醒文字(留空則不顯示), widget: text, required: false}
+  - name: about
+    label: 關於我們
+    icon: info
+    files:
+      - name: about
+        label: 關於我們頁面
+        file: about.json
+        format: json
+        fields:
+          - {name: about, label: 內文(空一行即分段), widget: text}
+          - {name: about_image, label: 照片(選填), widget: image, required: false}
+  - name: products
+    label: 產品類別
+    icon: category
+    files:
+      - name: products
+        label: 產品類別(窗簾、壁紙、地板、皮革、布料)
+        file: products.json
+        format: json
+        fields:
+          - {name: products_title, label: 首頁產品區標題, widget: string, required: false}
           - name: products
-            label: 產品類別(窗簾、壁紙、地板、皮革)
+            label: 產品類別
             label_singular: 類別
             widget: list
+            required: false
+            collapsed: true
+            minimize_collapsed: true
             summary: "{{fields.name}}"
             fields:
               - {name: name, label: 名稱, widget: string}
-              - {name: desc, label: 說明, widget: text}
+              - {name: desc, label: 說明, widget: text, required: false}
               - {name: image, label: 封面照片, widget: image, required: false}
-              - {name: gallery, label: 更多照片(類別沒有細品時顯示), widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
+              - {name: gallery, label: 更多照片(類別沒有細品時才顯示), widget: list, collapsed: true, minimize_collapsed: true, field: {name: photo, label: 照片, widget: image}, required: false}
+  - name: items
+    label: 細品項目
+    icon: widgets
+    files:
+      - name: items
+        label: 細品項目(例如窗簾的布紗簾、捲簾)
+        file: items.json
+        format: json
+        fields:
           - name: items
-            label: 細品項目(例如窗簾的布紗簾、捲簾)
+            label: 細品項目
             label_singular: 細品項目
             widget: list
             required: false
-            summary: "{{fields.category}}|{{fields.name}}"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.category}}｜{{fields.name}}"
             fields:
               - {name: category, label: 所屬類別, widget: select, options: ["窗簾", "壁紙", "地板／地磚／地毯", "皮革", "布料"]}
               - {name: name, label: 細品名稱, widget: string}
               - {name: image, label: 封面照片, widget: image, required: false}
               - {name: desc, label: 說明(空一行即分段), widget: text, required: false}
               - {name: features, label: 特色或規格(一行一項), widget: text, required: false}
-              - {name: photos, label: 照片集, widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
-          - {name: product_notice, label: 項目頁上方的提醒文字(留空則不顯示), widget: text, required: false}
-          - {name: projects_title, label: 作品案例標題, widget: string, required: false, hint: "例如:作品案例。沒有作品時整區不會顯示"}
+              - {name: photos, label: 照片集, widget: list, collapsed: true, minimize_collapsed: true, field: {name: photo, label: 照片, widget: image}, required: false}
+  - name: projects
+    label: 作品案例
+    icon: photo_library
+    files:
+      - name: projects
+        label: 作品案例(沒有案例時,網站不會顯示這一區)
+        file: projects.json
+        format: json
+        fields:
+          - {name: projects_title, label: 區塊標題(例如作品案例), widget: string, required: false}
           - name: projects
-            label: 作品案例
+            label: 案例
             label_singular: 案例
             widget: list
             required: false
+            collapsed: true
+            minimize_collapsed: true
             summary: "{{fields.title}}"
             fields:
               - {name: title, label: 標題, widget: string}
               - {name: desc, label: 說明, widget: text, required: false}
               - {name: image, label: 封面照片, widget: image}
-              - {name: gallery, label: 更多照片, widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
-          - {name: news_title, label: 最新消息標題, widget: string, required: false, hint: "例如:最新消息。沒有消息時整區不會顯示"}
+              - {name: gallery, label: 更多照片, widget: list, collapsed: true, minimize_collapsed: true, field: {name: photo, label: 照片, widget: image}, required: false}
+  - name: news
+    label: 最新消息
+    icon: newspaper
+    files:
+      - name: news
+        label: 最新消息(最新的放最上面)
+        file: news.json
+        format: json
+        fields:
+          - {name: news_title, label: 區塊標題(例如最新消息), widget: string, required: false}
           - name: news
-            label: 最新消息
+            label: 消息列表
             label_singular: 消息
             widget: list
             required: false
-            summary: "{{fields.date}} {{fields.title}}"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.date}}｜{{fields.title}}"
             fields:
-              - {name: date, label: 日期, widget: string, hint: "例如:2026/10/15"}
+              - {name: date, label: 日期, widget: string, hint: "例如：2026/10/15"}
               - {name: title, label: 標題, widget: string}
-              - {name: summary, label: 簡短摘要(列表上顯示,可留空), widget: string, required: false}
+              - {name: summary, label: 簡短摘要(列表上顯示，可留空), widget: string, required: false}
               - {name: image, label: 封面照片, widget: image, required: false}
               - {name: body, label: 文章內容(空一行即分段), widget: text, required: false}
-              - {name: gallery, label: 文章內更多照片, widget: list, field: {name: photo, label: 照片, widget: image}, required: false}
-          - {name: about, label: 關於我們(空一行即分段), widget: text}
-          - {name: about_image, label: 關於我們照片, widget: image, required: false}
-          - {name: address, label: 地址, widget: string}
-          - {name: phone, label: 電話, widget: string}
-          - {name: email, label: E-mail, widget: string}
-          - {name: hours, label: 營業時間, widget: string, required: false}
-          - {name: facebook, label: Facebook 連結, widget: string, required: false}
-          - {name: instagram, label: Instagram 連結(留空則使用預設的 xiaoyadecor38), widget: string, required: false}
+              - {name: gallery, label: 文章內更多照片, widget: list, collapsed: true, minimize_collapsed: true, field: {name: photo, label: 照片, widget: image}, required: false}

@@ -61,7 +61,8 @@ function boot(cb){
   h.querySelector('nav').addEventListener('click',e=>{if(e.target.tagName==='A')setM(false)});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')setM(false)});
   document.body.prepend(h);
-  fetch('site.json?'+Date.now()).then(r=>r.json()).then(d=>{
+  const J=u=>fetch(u+'?'+Date.now()).then(r=>r.ok?r.json():{}).catch(()=>({}));
+  Promise.all(['site','about','products','items','projects','news'].map(n=>J(n+'.json'))).then(a=>Object.assign({},...a)).then(d=>{
     const f=el('footer');f.className='site';f.id='contact';
     f.innerHTML='<div class="wrap ft"><div><img class="fl" src="logo-wide.jpg" alt="小雅家飾概念"></div><div><h4>聯絡我們</h4><ul id="fi"></ul></div><div class="soc" id="fs"></div></div><div class="wrap bar"><span>版權所有 © '+new Date().getFullYear()+' 小雅家飾概念 Xiaoya.furniture</span><span><a href="privacy.html">版權及隱私政策</a><a href="#top" aria-label="回到頁面頂端">↑ TOP</a></span></div>';
     const li=(k,node)=>{const x=el('li');x.append(k+':',node);$('#fi',f).append(x)};
