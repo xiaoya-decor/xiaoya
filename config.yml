@@ -76,3 +76,4 @@ collections:
           - {name: email, label: E-mail, widget: string}
           - {name: hours, label: 營業時間, widget: string, required: false}
           - {name: facebook, label: Facebook 連結, widget: string, required: false}
+          - {name: instagram, label: Instagram 連結(留空則使用預設的 xiaoyadecor38), widget: string, required: false}

@@ -49,6 +49,7 @@ function newsCard(n){
   const s=n.summary||String(n.body||'').replace(/\s+/g,' ').slice(0,80);if(s)t.append(el('p',s));
   if(has)t.append(el('span','閱讀全文 →',{className:'go'}));c.append(t);return c}
 const FB='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.2" fill="#fff"/><path fill="#1877f2" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>';
+const IG='<svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><circle cx="12" cy="12" r="10.2" fill="#fff"/><rect x="6.5" y="6.5" width="11" height="11" rx="3.2" fill="none" stroke="url(#igg)" stroke-width="1.6"/><circle cx="12" cy="12" r="2.7" fill="none" stroke="url(#igg)" stroke-width="1.6"/><circle cx="15.3" cy="8.7" r=".9" fill="url(#igg)"/></svg>';
 function boot(cb){
   const here=location.pathname.split('/').pop()||'index.html';
   const nav=[['index.html','首頁'],['about.html','關於我們'],['news.html','最新消息'],['products.html','產品服務'],['#contact','聯絡我們']];
@@ -70,6 +71,8 @@ function boot(cb){
     if(d.address)li('地址',el('a',' '+d.address,{href:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(d.address),target:'_blank',rel:'noopener'}));
     if(d.hours)li('營業時間',sp(d.hours));
     if(d.facebook){const a=el('a','',{href:d.facebook,target:'_blank',rel:'noopener'});a.setAttribute('aria-label','小雅家飾 Facebook 專頁');a.innerHTML=FB;$('#fs',f).append(a)}
+    const igu=d.instagram===undefined?'https://www.instagram.com/xiaoyadecor38/':d.instagram;
+    if(igu){const a=el('a','',{href:igu,target:'_blank',rel:'noopener'});a.setAttribute('aria-label','小雅家飾 Instagram');a.innerHTML=IG;$('#fs',f).append(a)}
     document.body.append(f);cb&&cb(d)
   }).catch(()=>{cb&&cb({})});
 }
