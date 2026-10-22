@@ -1,3 +1,12 @@
+(function(){
+  const id='G-45E65L6FHE';
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;
+  gtag('js',new Date());gtag('config',id);
+  const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.append(s);
+  document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href]');if(!a)return;const h=a.getAttribute('href')||'';
+    let n='';if(h.startsWith('tel:'))n='click_phone';else if(h.startsWith('mailto:'))n='click_email';else if(h.includes('facebook.com'))n='click_facebook';else if(h.includes('instagram.com'))n='click_instagram';else if(h.includes('google.com/maps'))n='click_map';
+    if(n)gtag('event',n,{link_url:h})});
+})();
 const $=(s,r=document)=>r.querySelector(s);
 function el(t,txt,a){const e=document.createElement(t);if(txt)e.textContent=txt;if(a)Object.assign(e,a);return e}
 const url=p=>encodeURI(String(p).replace(/^\/+/,''));
