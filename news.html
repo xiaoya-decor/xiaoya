@@ -23,7 +23,7 @@
 <script>boot(d=>{
   const m=$('#m'),list=d.news||[],id=new URLSearchParams(location.search).get('id'),n=id&&list.find(x=>nid(x)===id);
   const head=t=>{const h=el('div');h.className='pagehead';h.innerHTML='<div class="wrap"><h1></h1></div>';h.querySelector('h1').textContent=t;m.append(h)};
-  if(n){document.title=n.title+'｜小雅家飾概念';
+  if(n){seo(n.title+'｜小雅家飾概念',n.summary||snip(n.body,100));
     const s=el('section'),w=el('div');w.className='wrap';const a=el('article');a.className='art';
     a.append(el('a','← 回到最新消息',{href:'news.html',className:'back'}));
     if(n.image)a.append(el('img','',{className:'cover',src:url(n.image),alt:n.title}));

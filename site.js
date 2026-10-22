@@ -15,6 +15,17 @@ const nid=n=>{let h=5381;const s=(n.date||'')+'|'+(n.title||'');for(let i=0;i<s.
 
 const hid=s=>{let h=5381;s=String(s||'');for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))>>>0;return h.toString(36)};
 const itemsOf=(d,p)=>[...(p.items||[]),...(d.items||[]).filter(x=>x.category===p.name)];
+
+function seo(title,desc,crumbs){
+  document.title=title;
+  const q=s=>document.querySelector(s),og=(p,v)=>{const e=q('meta[property="'+p+'"]');if(e)e.content=v};
+  if(desc){const m=q('meta[name=description]');if(m)m.content=desc;og('og:description',desc)}
+  og('og:title',title);
+  let c=q('link[rel=canonical]');if(!c){c=document.createElement('link');c.rel='canonical';document.head.append(c)}
+  c.href='https://www.xiaoya.com.tw/'+location.pathname.split('/').pop()+location.search;og('og:url',c.href);
+  if(crumbs){const s=document.createElement('script');s.type='application/ld+json';
+    s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:crumbs.map((x,i)=>({'@type':'ListItem',position:i+1,name:x[0],item:'https://www.xiaoya.com.tw/'+x[1]}))});document.head.append(s)}}
+const snip=(s,n)=>String(s||'').split(/\n\s*\n/)[0].replace(/\s+/g,' ').slice(0,n);
 const param=k=>new URLSearchParams(location.search).get(k);
 const NOTICE='所有商品圖片皆為實物拍攝，由於電腦螢幕色差、拍攝光線等因素，照片與實物會略有差別，商品以實物為主。\n備註：因每年會汰換布料樣式，布料樣式需以現場為主。';
 function pageHead(en,title,crumb){

@@ -100,3 +100,5 @@ dialog::backdrop{background:rgba(0,0,0,.88)}
 @media(max-width:760px){.pg{grid-template-columns:repeat(2,1fr)}.cta{padding:24px}.crumb{font-size:14px}}
 
 .cat .cf.ph0{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}.cat .cf.ph0 img{width:34%;aspect-ratio:1;object-fit:contain;opacity:.55;border-radius:50%;transform:none}
+
+.lead p{white-space:pre-line}

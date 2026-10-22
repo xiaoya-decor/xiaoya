@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>網站地圖產生工具｜小雅家飾概念</title>
+<style>body{font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;max-width:640px;margin:40px auto;padding:0 20px;line-height:1.8;color:#2b2a28}
+a.b{display:block;margin:14px 0;padding:14px 18px;background:#f9ba06;color:#2b2a28;text-decoration:none;border-radius:4px;font-weight:500}</style></head><body>
+<h1>網站地圖產生工具</h1><p>新增或修改類別、細品項目、最新消息之後，按下方按鈕下載最新的 <code>sitemap.xml</code>，再上傳到 GitHub 儲存庫覆蓋舊檔。</p><div id="o">讀取中…</div>
+<script>
+const B='https://www.xiaoya.com.tw/';
+const hid=s=>{let h=5381;s=String(s||'');for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))>>>0;return h.toString(36)};
+const J=u=>fetch(u+'?'+Date.now()).then(r=>r.ok?r.json():{}).catch(()=>({}));
+const esc=s=>s.replace(/&/g,'&amp;');
+Promise.all(['site','products','items','news'].map(n=>J(n+'.json'))).then(a=>Object.assign({},...a)).then(d=>{
+  const u=['','products.html','about.html','news.html','privacy.html'];
+  (d.products||[]).forEach(p=>u.push('category.html?c='+hid(p.name)));
+  (d.items||[]).forEach(it=>{const p=(d.products||[]).find(x=>x.name===it.category);if(p)u.push('item.html?c='+hid(p.name)+'&i='+hid(it.name))});
+  (d.news||[]).forEach(n=>{if(n.body||n.image||(n.gallery||[]).length)u.push('news.html?id='+hid((n.date||'')+'|'+(n.title||'')))});
+  const day=new Date().toISOString().slice(0,10);
+  const xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+u.map(x=>'  <url><loc>'+esc(B+x)+'</loc><lastmod>'+day+'</lastmod></url>').join('\n')+'\n</urlset>\n';
+  const o=document.getElementById('o');o.textContent='共 '+u.length+' 個網址。';
+  const a=document.createElement('a');a.className='b';a.textContent='下載 sitemap.xml';a.href=URL.createObjectURL(new Blob([xml],{type:'application/xml'}));a.download='sitemap.xml';o.append(a)});
+</script></body></html>
