@@ -4,7 +4,7 @@
   gtag('js',new Date());gtag('config',id);
   const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.append(s);
   document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href]');if(!a)return;const h=a.getAttribute('href')||'';
-    let n='';if(h.startsWith('tel:'))n='click_phone';else if(h.startsWith('mailto:'))n='click_email';else if(h.includes('facebook.com'))n='click_facebook';else if(h.includes('instagram.com'))n='click_instagram';else if(h.includes('google.com/maps'))n='click_map';
+    let n='';if(h.startsWith('tel:'))n='click_phone';else if(h.startsWith('mailto:'))n='click_email';else if(h.includes('facebook.com'))n='click_facebook';else if(h.includes('instagram.com'))n='click_instagram';else if(h.includes('google.com/maps'))n='click_map';else if(h.includes('docs.google.com/forms')||h.includes('forms.gle'))n='click_form';
     if(n)gtag('event',n,{link_url:h})});
 })();
 const $=(s,r=document)=>r.querySelector(s);
@@ -94,6 +94,7 @@ function boot(cb){
     if(d.facebook){const a=el('a','',{href:d.facebook,target:'_blank',rel:'noopener'});a.setAttribute('aria-label','小雅家飾 Facebook 專頁');a.innerHTML=FB;$('#fs',f).append(a)}
     const igu=d.instagram===undefined?'https://www.instagram.com/xiaoyadecor38/':d.instagram;
     if(igu){const a=el('a','',{href:igu,target:'_blank',rel:'noopener'});a.setAttribute('aria-label','小雅家飾 Instagram');a.innerHTML=IG;$('#fs',f).append(a)}
+    if(d.form_url){const b=el('a','我要諮詢／我要裝窗簾',{href:d.form_url,target:'_blank',rel:'noopener',className:'fbtn'});$('#fi',f).parentNode.append(b)}
     document.body.append(f);cb&&cb(d)
   }).catch(()=>{cb&&cb({})});
 }

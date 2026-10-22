@@ -25,6 +25,7 @@ collections:
           - {name: hours, label: 營業時間, widget: string, required: false}
           - {name: facebook, label: Facebook 連結, widget: string, required: false}
           - {name: instagram, label: Instagram 連結(留空則用預設), widget: string, required: false}
+          - {name: form_url, label: 需求表單連結(Google 表單網址，留空則不顯示按鈕), widget: string, required: false}
           - {name: product_notice, label: 項目頁上方的提醒文字(留空則不顯示), widget: text, required: false}
   - name: about
     label: 關於我們

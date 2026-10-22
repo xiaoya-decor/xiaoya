@@ -102,3 +102,5 @@ dialog::backdrop{background:rgba(0,0,0,.88)}
 .cat .cf.ph0{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}.cat .cf.ph0 img{width:34%;aspect-ratio:1;object-fit:contain;opacity:.55;border-radius:50%;transform:none}
 
 .lead p{white-space:pre-line}
+
+.ft .fbtn{display:inline-block;margin-top:14px;background:var(--sun);color:#2b2a28;padding:13px 28px;font-weight:500;text-decoration:none;border-radius:2px}.ft .fbtn:hover{filter:brightness(.93)}
